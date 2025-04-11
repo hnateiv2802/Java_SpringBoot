@@ -11,6 +11,4 @@ Dependencies:
   3. mysql-connector-j
 
 TODO: 
-  1. create and connect DBMS (mySQL)
-  2. Create CRUD API
-  3. Using Spring JPA 
+  1. Validate client request 
