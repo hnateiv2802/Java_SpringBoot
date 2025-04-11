@@ -4,7 +4,9 @@ import com.anhtv.identity_service.dto.request.UserCreationRequest;
 import com.anhtv.identity_service.dto.request.UserUpdateRequest;
 import com.anhtv.identity_service.entity.User;
 import com.anhtv.identity_service.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,17 +20,17 @@ public class UserController {
 
     // create user
     @PostMapping
-    public User createUser(@RequestBody UserCreationRequest request) {
+    public User createUser(@RequestBody @Valid UserCreationRequest request) {
         return userService.createUser(request);
     }
 
-    // find all user
+    // get all user
     @GetMapping
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
-    // find user
+    // get user
     @GetMapping("/{userId}")
     public User getUserById(@PathVariable("userId") String userId) {
         return userService.getUser(userId);

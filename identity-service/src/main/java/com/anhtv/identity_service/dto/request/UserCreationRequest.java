@@ -1,12 +1,27 @@
 package com.anhtv.identity_service.dto.request;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDate;
 
 public class UserCreationRequest {
+    @NotNull
+    @Size(min = 5, max = 50, message = "Username must be at least 5 characters!")
     private String username;
+
+    @NotNull
+    @Size(min = 8, message = "Password must be at least 8 characters!")
     private String password;
+
+    @Size(min = 1, message = "Please enter your first name.")
     private String firstName;
+
+    @Size(min = 1, message = "Please enter your last name.")
     private String lastName;
+
+    @Past(message = "Enter your birthday!")
     private LocalDate birthDate;
 
     public String getUsername() {
