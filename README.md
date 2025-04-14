@@ -11,5 +11,7 @@ Dependencies:
   3. mysql-connector-j
 
 TODO: 
-  1. Manage Exception advance.
-  2. Normalize API.
+  1. Use Loombok Dependency.
+  2. Use Mapstruct Dependency.
+  3. Edit Dependency injection (change DI variable to constructors).
+  
