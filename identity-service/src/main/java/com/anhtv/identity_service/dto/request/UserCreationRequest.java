@@ -8,11 +8,11 @@ import java.time.LocalDate;
 
 public class UserCreationRequest {
     @NotNull
-    @Size(min = 5, max = 50, message = "Username must be at least 5 characters!")
+    @Size(min = 5, message = "USERNAME_INVALID")
     private String username;
 
     @NotNull
-    @Size(min = 8, message = "Password must be at least 8 characters!")
+    @Size(min = 8, message = "PASSWORD_INVALID")
     private String password;
 
     @Size(min = 1, message = "Please enter your first name.")

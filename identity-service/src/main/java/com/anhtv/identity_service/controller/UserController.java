@@ -1,5 +1,6 @@
 package com.anhtv.identity_service.controller;
 
+import com.anhtv.identity_service.dto.request.ApiResponse;
 import com.anhtv.identity_service.dto.request.UserCreationRequest;
 import com.anhtv.identity_service.dto.request.UserUpdateRequest;
 import com.anhtv.identity_service.entity.User;
@@ -20,13 +21,17 @@ public class UserController {
 
     // create user
     @PostMapping
-    public User createUser(@RequestBody @Valid UserCreationRequest request) {
-        return userService.createUser(request);
+    ApiResponse<User> createUser(@RequestBody @Valid UserCreationRequest request) {
+        ApiResponse<User> response = new ApiResponse<>();
+//        response.setMessage("Successfully created user!");
+        response.setResult(userService.createUser(request));
+        return response;
     }
 
     // get all user
     @GetMapping
     public List<User> getAllUsers() {
+
         return userService.getAllUsers();
     }
 
