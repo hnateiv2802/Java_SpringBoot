@@ -11,4 +11,5 @@ Dependencies:
   3. mysql-connector-j
 
 TODO: 
-  1. Validate client request 
+  1. Manage Exception advance.
+  2. Normalize API.
